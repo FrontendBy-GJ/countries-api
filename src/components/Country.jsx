@@ -6,19 +6,20 @@ const Country = ({ country, darkMode }) => {
   return (
     <Link to={`/country/${name.official}`}>
       <article
-        className={`rounded-lg shadow-md h-full ${
+        className={`h-full rounded-lg shadow-md ${
           darkMode ? 'bg-dark-blue text-white' : 'bg-white text-text-lightMode'
         }`}
       >
         <img
           src={flags.png}
           alt={flags.alt}
-          className="aspect-video w-full object-cover rounded-tl-lg rounded-tr-lg"
+          className="aspect-video w-full rounded-tl-lg rounded-tr-lg object-cover"
         />
-        <div className="p-6 space-y-2">
+        <div className="space-y-2 p-6">
           <h2 className="text-xl font-extrabold">{name.common}</h2>
           <p className="pt-4 font-semibold">
-            Population: <span className="font-normal">{population}</span>
+            Population:{' '}
+            <span className="font-normal">{population.toLocaleString()}</span>
           </p>
           <p className="font-semibold">
             Region: <span className="font-normal">{region}</span>

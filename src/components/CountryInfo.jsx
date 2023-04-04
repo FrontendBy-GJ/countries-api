@@ -19,13 +19,13 @@ const CountryInfo = ({ darkMode }) => {
           darkMode ? 'bg-slate-800' : 'bg-slate-100'
         }`}
       >
-        <div className={`max-w-7xl mx-auto min-h-screen px-6 pb-20`}>
-          <div className="pt-10 pb-20">
+        <div className={`mx-auto min-h-screen max-w-7xl px-6 pb-20`}>
+          <div className="pb-20 pt-10">
             <Link
               to={'/'}
-              className={`px-6 py-2 rounded shadow-md ${
+              className={`rounded px-6 py-2 shadow-md ${
                 darkMode
-                  ? 'text-slate-100 bg-slate-800 shadow-slate-900'
+                  ? 'bg-slate-800 text-slate-100 shadow-slate-900'
                   : 'bg-white text-slate-800'
               }`}
             >
@@ -35,16 +35,16 @@ const CountryInfo = ({ darkMode }) => {
           {country.map((c) => (
             <div
               key={c.area}
-              className="flex flex-col lg:flex-row justify-between lg:gap-20 text-slate-400"
+              className="flex flex-col justify-between text-slate-400 lg:flex-row lg:gap-20"
             >
-              <div className="flex-1 aspect-video">
+              <div className="aspect-video flex-1">
                 <img
                   src={c.flags.png}
                   alt={c.flags.alt}
-                  className="w-full h-full object-contain"
+                  className="h-full w-full object-contain"
                 />
               </div>
-              <div className="flex-1 mt-10">
+              <div className="mt-10 flex-1">
                 <h4
                   className={`text-3xl font-bold ${
                     darkMode ? 'text-slate-100' : 'text-slate-800'
@@ -52,7 +52,7 @@ const CountryInfo = ({ darkMode }) => {
                 >
                   {c.name.common}
                 </h4>
-                <div className="flex flex-col md:flex-row justify-between flex-1 gap-10 mt-5">
+                <div className="mt-5 flex flex-1 flex-col justify-between gap-10 md:flex-row">
                   <div className="space-y-2">
                     <h4>
                       <span
@@ -72,7 +72,7 @@ const CountryInfo = ({ darkMode }) => {
                       >
                         Population:
                       </span>{' '}
-                      {c.population}
+                      {c.population.toLocaleString()}
                     </h4>
                     <h4>
                       <span
@@ -135,7 +135,7 @@ const CountryInfo = ({ darkMode }) => {
                     >
                       Languages:{' '}
                       {Object.values(country[0].languages).map((lang) => (
-                        <span className="text-slate-400 font-normal" key={lang}>
+                        <span className="font-normal text-slate-400" key={lang}>
                           {lang}
                         </span>
                       ))}
@@ -143,22 +143,22 @@ const CountryInfo = ({ darkMode }) => {
                   </div>
                 </div>
                 {country[0].borders ? (
-                  <div className="flex flex-col lg:flex-row gap-2 mt-10">
+                  <div className="mt-10 flex flex-col gap-2 lg:flex-row">
                     <h4
-                      className={`font-semibold shrink-0 ${
+                      className={`shrink-0 font-semibold ${
                         darkMode ? 'text-slate-100' : 'text-slate-800'
                       }`}
                     >
                       Border Countries:
                     </h4>
-                    <ul className="flex gap-4 flex-wrap">
+                    <ul className="flex flex-wrap gap-4">
                       {c.borders.map((border) => (
                         <li
                           className={`${
                             darkMode
                               ? 'bg-dark-blue text-slate-100'
                               : 'bg-white text-text-lightMode'
-                          } inline-block px-8 rounded text-xs py-1 shadow-md`}
+                          } inline-block rounded px-8 py-1 text-xs shadow-md`}
                           key={border}
                         >
                           {border}
