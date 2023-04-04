@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- [Soultion](https://your-solution-url.com)
+- [Soultion](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-1VUlbh029q)
 - [Live Site](https://garcia-jr-rest-countries-api.netlify.app/)
 
 ## My process
