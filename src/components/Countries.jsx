@@ -59,7 +59,7 @@ const Countries = ({ darkMode }) => {
         }
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:max-w-7xl mx-auto gap-10 place-content-center px-10 lg:px-6">
+      <div className="mx-auto grid grid-cols-1 place-content-center gap-10 px-10 md:grid-cols-2 lg:grid-cols-3 lg:px-6 xl:max-w-7xl xl:grid-cols-4">
         {input
           ? searchResults.map((country, index) => (
               <Country key={index} country={country} darkMode={darkMode} />
